@@ -1,0 +1,13 @@
+<ul>
+  <ng-container *ngIf="!(isLoading$ | async);else loading">
+    <li *ngFor="let pokemon of (pokemons$ | async)">
+      <a [routerLink]="['/pokemon',pokemon.name]">
+        {{ pokemon.name }}
+      </a>
+    </li>
+  </ng-container>
+
+  <ng-template #loading>
+    loading
+  </ng-template>
+</ul>
